@@ -4,6 +4,9 @@ const scrollToServices = () => {
     .querySelector('#servicios')
     ?.scrollIntoView({ behavior: 'smooth' })
 }
+
+import mainJME from '~/assets/images/mainJME.png'
+
 </script>
 
 <template>
@@ -59,10 +62,13 @@ const scrollToServices = () => {
         <!-- Imagen -->
 
         <div class="relative h-full">
-          <NuxtImg
+          <!-- <NuxtImg
             src="/images/mainJME.png"
             class="h-[760px] w-full rounded-bl-[120px] object-cover"
-          />
+          /> -->
+          <img
+            :src="mainJME"
+            class="h-[760px] w-full rounded-bl-[120px] object-cover">
 
           <div
             class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/35 to-transparent"
