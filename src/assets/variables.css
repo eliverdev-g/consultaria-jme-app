@@ -1,0 +1,39 @@
+/* src/assets/variables.css */
+@theme {
+  /* ==========================================
+       TIPOGRAFÍA
+    ========================================== */
+  --font-sans: 'Public Sans', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+
+  /* ==========================================
+       COLORES PRINCIPALES
+    ========================================== */
+  --color-primary-50: #f4f7fa;
+  --color-primary-900: #07152e;
+  --color-primary-950: #040d1c;
+
+  /* ==========================================
+       DORADO
+    ========================================== */
+  --color-gold-50: #fff9e8;
+  --color-gold-500: #d9a928;
+
+  /* ==========================================
+       NEUTROS (Asegúrate de agregar este para el texto gris de tu Hero)
+    ========================================== */
+  --color-gray-300: #cbd5e1;
+
+  /* ==========================================
+       ESPACIADO Y OTROS
+    ========================================== */
+  --section-padding: 2rem;
+  --section-padding-mobile: 3.5rem;
+}
+
+/* Las variables globales (no relacionadas con clases de Tailwind) pueden ir en :root */
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f8f8f7;
+  --color-text: #1b2430;
+}

@@ -301,3 +301,37 @@ RESPONSIVE
     }
 
 }
+
+/*==========================
+BOTÓN DE CIERRE INTERNO
+==========================*/
+
+.close-menu-btn {
+    position: absolute;
+
+    top: 2rem;
+
+    right: 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.close-menu-btn:hover {
+    color: var(--color-gold-500);
+}

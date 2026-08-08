@@ -26,34 +26,13 @@ const sections = [
   <section class="section section--white">
     <div class="container-custom">
 
-      <!-- Encabezado -->
-      <div class="section-header">
-        <span class="section-eyebrow">
-          Sobre nosotros
-        </span>
-
-        <h2 class="section-title">
-          Experiencia que genera valor
-        </h2>
-
-        <p class="section-description">
-          En Consultores JME combinamos experiencia, profesionalismo y
-          compromiso para ofrecer soluciones estratégicas que impulsen
-          el crecimiento sostenible de nuestros clientes.
-        </p>
-      </div>
-
       <!-- ==========================================
            MISIÓN / VISIÓN / VALORES
       =========================================== -->
       <div class="grid grid-3 grid-gap-md">
 
-        <article
-          v-for="item in sections"
-          :id="item.id"
-          :key="item.id"
-          class="group flex h-full flex-col overflow-hidden rounded-[12px] border border-primary-100 bg-white shadow-[0_6px_25px_rgba(7,21,46,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_rgba(7,21,46,0.14)]"
-        >
+        <article v-for="item in sections" :id="item.id" :key="item.id"
+          class="group flex h-full flex-col overflow-hidden rounded-[12px] border border-primary-100 bg-white shadow-[0_6px_25px_rgba(7,21,46,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_rgba(7,21,46,0.14)]">
 
           <!-- ==========================================
                  IMAGEN
@@ -61,16 +40,12 @@ const sections = [
           <div class="relative flex h-[190px] shrink-0 items-center justify-center overflow-hidden bg-white">
 
             <!-- Reemplazado <img> por <NuxtImg> nativo -->
-            <NuxtImg
-              :src="item.image"
-              :alt="`${item.title} - Consultores JME`"
-              class="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]"
-            />
+            <img :src="item.image" :alt="`${item.title} - Consultores JME`"
+              class="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]" />
 
             <!-- Línea inferior -->
             <div
-              class="absolute bottom-0 left-1/2 h-[3px] w-12 -translate-x-1/2 bg-gold-500 transition-all duration-300 group-hover:w-20"
-            />
+              class="absolute bottom-0 left-1/2 h-[3px] w-12 -translate-x-1/2 bg-gold-500 transition-all duration-300 group-hover:w-20" />
 
           </div>
 

@@ -1,0 +1,7 @@
+/* src/assets/main.css */
+@import 'tailwindcss';
+
+@import './variables.css';
+@import './base.css';
+@import './utilities.css';
+@import './header.css';

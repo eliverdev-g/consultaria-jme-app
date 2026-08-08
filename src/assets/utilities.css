@@ -12,7 +12,6 @@
   padding-inline: 1rem;
 }
 
-
 /* ==========================================
    SECTION
 ========================================== */
@@ -41,7 +40,6 @@
   color: white;
 }
 
-
 /* ==========================================
    SECTION HEADER
 ========================================== */
@@ -61,24 +59,24 @@
 
   align-items: center;
 
-  gap: .75rem;
+  gap: 0.75rem;
 
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 
   color: var(--color-gold-600);
 
-  font-size: .82rem;
+  font-size: 0.82rem;
 
   font-weight: 600;
 
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 
   text-transform: uppercase;
 }
 
 .section-eyebrow::before,
 .section-eyebrow::after {
-  content: "";
+  content: '';
 
   width: 28px;
 
@@ -92,7 +90,7 @@
 
   font-family: var(--font-serif);
 
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2rem, 1vw, 2.8rem);
 
   font-weight: 500;
 
@@ -116,9 +114,8 @@
 }
 
 .section-description--white {
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
 }
-
 
 /* ==========================================
    GRID
@@ -152,7 +149,6 @@
   gap: 2rem;
 }
 
-
 /* ==========================================
    CARDS
 ========================================== */
@@ -169,8 +165,8 @@
   box-shadow: var(--shadow-sm);
 
   transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -178,7 +174,6 @@
 
   box-shadow: var(--shadow-lg);
 }
-
 
 /* ==========================================
    CARD DARK
@@ -192,7 +187,6 @@
   border-color: transparent;
 }
 
-
 /* ==========================================
    CARD CREAM
 ========================================== */
@@ -204,7 +198,6 @@
 
   border-color: transparent;
 }
-
 
 /* ==========================================
    ICON CIRCLE
@@ -243,7 +236,6 @@
   background: transparent;
 }
 
-
 /* ==========================================
    GOLD LINE
 ========================================== */
@@ -256,7 +248,6 @@
   background: var(--color-gold-500);
 }
 
-
 /* ==========================================
    BUTTONS
 ========================================== */
@@ -268,7 +259,7 @@
 
   justify-content: center;
 
-  gap: .5rem;
+  gap: 0.5rem;
 
   min-height: 46px;
 
@@ -278,7 +269,7 @@
 
   border-radius: var(--radius-sm);
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   font-weight: 600;
 
@@ -287,10 +278,10 @@
   cursor: pointer;
 
   transition:
-    background .25s ease,
-    color .25s ease,
-    border-color .25s ease,
-    transform .25s ease;
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .btn:hover {
@@ -321,7 +312,6 @@
   color: var(--color-primary-950);
 }
 
-
 /* ==========================================
    FLEX
 ========================================== */
@@ -346,13 +336,11 @@
   justify-content: space-between;
 }
 
-
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
 @media (max-width: 1200px) {
-
   .container-custom {
     padding-inline: 1.75rem;
   }
@@ -360,12 +348,9 @@
   .grid-4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
-
 @media (max-width: 1024px) {
-
   .container-custom {
     padding-inline: 1.5rem;
   }
@@ -373,12 +358,9 @@
   .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
-
 @media (max-width: 768px) {
-
   :root {
     --section-padding: var(--section-padding-mobile);
   }
@@ -400,12 +382,9 @@
   .section-title {
     font-size: 1rem;
   }
-
 }
 
-
 @media (max-width: 480px) {
-
   .container-custom {
     padding-inline: 1rem;
   }
@@ -413,5 +392,4 @@
   .section-title {
     font-size: 1.8rem;
   }
-
 }
