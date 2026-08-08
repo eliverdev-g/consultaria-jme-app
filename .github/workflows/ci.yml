@@ -1,34 +1,42 @@
-name: ci
+name: Deploy Nuxt to GitHub Pages
 
-on: push
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  ci:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [22]
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Install node
-        uses: actions/setup-node@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: ${{ matrix.node }}
+          version: 11.18.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm run lint
+      - name: Generate Nuxt
+        run: pnpm exec nuxt generate
 
-      - name: Typecheck
-        run: pnpm run typecheck
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .output/public
