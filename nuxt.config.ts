@@ -13,14 +13,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@nuxt/icon', // Iconos
-    '@nuxt/image', // <-- Habilita el módulo aquí
+    '@nuxt/icon',
+    '@nuxt/image', // Asegúrate de que esté habilitado
     '@vueuse/nuxt'
   ],
 
-  // Si solo quieres que arregle la ruta sin transformar las imágenes de public/
+  // @ts-expect-error - Omitimos el error de TypeScript si no has regenerado los tipos
   image: {
-    provider: 'none'
+    // ESTO ES LO QUE SOLUCIONA EL 404 EN GITHUB PAGES
+    baseURL: '/consultaria-jme-app/'
   },
 
   vite: {
