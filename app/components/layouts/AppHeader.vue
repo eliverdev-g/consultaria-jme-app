@@ -41,7 +41,7 @@ const closeMenu = () => {
 
       <div class="header-content">
 
-<img
+<img class="logo"
     :src="`${config.app.baseURL}images/logo-bg.png`"
     alt="Consultores JME"
   >
