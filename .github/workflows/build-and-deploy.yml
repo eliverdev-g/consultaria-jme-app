@@ -8,11 +8,20 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    env:
+      NUXT_APP_BASE_URL: /consultaria-jme-app/
 
     steps:
       - name: Checkout
@@ -32,11 +41,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Generate Nuxt
-        run: pnpm exec nuxt generate
+        run: pnpm exec nuxt build --preset github_pages
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .output/public
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .output/public
+        id: deployment
+        uses: actions/deploy-pages@v4
