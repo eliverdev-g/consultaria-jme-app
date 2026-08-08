@@ -20,9 +20,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    env:
-      NUXT_APP_BASE_URL: /consultaria-jme-app/
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,7 +42,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Generate Nuxt
-        run: pnpm exec nuxt build --preset github_pages
+        run: pnpm exec nuxt generate
 
       - name: Inspect generated files
         run: |

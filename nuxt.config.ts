@@ -1,14 +1,13 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     baseURL: '/consultaria-jme-app/'
   },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/icon',
-    //'@pinia/nuxt',
     '@vueuse/nuxt'
   ],
 
