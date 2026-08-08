@@ -3,7 +3,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/consultaria-jme-app/'
+    baseURL: '/consultaria-jme-app/',
+    // ESTO ES CLAVE: Cambia '_nuxt' por 'assets' para que GitHub Pages cargue tus CSS y JS
+    buildAssetsDir: 'assets'
   },
 
   nitro: {
@@ -14,13 +16,13 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/icon',
-    '@nuxt/image', // Asegúrate de que esté habilitado
+    '@nuxt/image',
     '@vueuse/nuxt'
   ],
 
-  // @ts-expect-error - Omitimos el error de TypeScript si no has regenerado los tipos
   image: {
-    // ESTO ES LO QUE SOLUCIONA EL 404 EN GITHUB PAGES
+    provider: 'none',
+    // ESTO ES CLAVE: Le dice a NuxtImg que siempre agregue tu repositorio al inicio de la URL
     baseURL: '/consultaria-jme-app/'
   },
 

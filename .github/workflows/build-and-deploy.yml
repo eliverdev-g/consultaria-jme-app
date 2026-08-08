@@ -36,13 +36,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site with GitHub Pages preset
-        run: pnpm exec nuxt build --preset github_pages
+      # CAMBIO AQUÍ: Usamos 'generate' para sitios estáticos en lugar de 'build'
+      - name: Generate static site
+        run: pnpm exec nuxt generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
+
+      - name: Build site with GitHub Pages preset
+        run: pnpm exec nuxt build --preset github_pages
+
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: .output/public
 
   deploy:
     needs: build
