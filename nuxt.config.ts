@@ -3,12 +3,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/consultaria-jme-app/',
-    // Cambia la carpeta del build de '_nuxt' a 'assets' para que GitHub Pages no la bloquee
-    buildAssetsDir: 'assets'
+    baseURL: '/consultaria-jme-app/'
   },
 
-  // Preset nativo de Nitro para GitHub Pages
   nitro: {
     preset: 'github-pages'
   },
@@ -16,19 +13,20 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    //'@nuxt/image',
-    '@nuxt/icon',
+    '@nuxt/icon', // Iconos
+    '@nuxt/image', // <-- Habilita el módulo aquí
     '@vueuse/nuxt'
   ],
+
+  // Si solo quieres que arregle la ruta sin transformar las imágenes de public/
+  image: {
+    provider: 'none'
+  },
 
   vite: {
     plugins: [
       tailwindcss()
     ]
-  },
-
-  image: {
-    provider: 'none'
   },
 
   devtools: {

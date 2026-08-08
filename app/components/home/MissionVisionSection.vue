@@ -1,27 +1,23 @@
 <script setup lang="ts">
-// Importación directa de imágenes desde la carpeta assets/images
-import misionImg from '~/assets/images/mision.jpg'
-import visionImg from '~/assets/images/vision.jpg'
-import valoresImg from '~/assets/images/valores.jpg'
-
 const sections = [
   {
     id: 'mision',
     title: 'Misión',
     text: 'Simplificar y optimizar los procesos operativos y estratégicos de nuestros clientes mediante soluciones integrales que impulsen su eficiencia, fortalezcan su gestión y les permitan enfocarse en el crecimiento sostenible de su negocio.',
-    image: misionImg
+    // Ruta directa a public/images/
+    image: '/images/mision.jpg'
   },
   {
     id: 'vision',
     title: 'Visión',
     text: 'Consolidarnos como una firma de consultoría líder en Guatemala, con presencia en Latinoamérica, reconocida por la excelencia de nuestras soluciones, la confianza de nuestros clientes y nuestra capacidad para generar valor e impulsar el crecimiento sostenible de las organizaciones.',
-    image: visionImg
+    image: '/images/vision.jpg'
   },
   {
     id: 'valores',
     title: 'Valores',
     text: 'Actuamos con transparencia, integridad, profesionalismo, ética y puntualidad, principios que orientan nuestro trabajo y fortalecen las relaciones de confianza con nuestros clientes y aliados estratégicos.',
-    image: valoresImg
+    image: '/images/valores.jpg'
   }
 ]
 </script>
@@ -60,16 +56,16 @@ const sections = [
         >
 
           <!-- ==========================================
-               IMAGEN
+                 IMAGEN
           =========================================== -->
           <div class="relative flex h-[190px] shrink-0 items-center justify-center overflow-hidden bg-white">
 
-            <!-- Imagen vinculada a la variable importada -->
-            <img
+            <!-- Reemplazado <img> por <NuxtImg> nativo -->
+            <NuxtImg
               :src="item.image"
               :alt="`${item.title} - Consultores JME`"
               class="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04]"
-            >
+            />
 
             <!-- Línea inferior -->
             <div
@@ -79,7 +75,7 @@ const sections = [
           </div>
 
           <!-- ==========================================
-               CONTENIDO
+                 CONTENIDO
           =========================================== -->
           <div class="flex flex-1 flex-col px-6 pb-7 pt-5 text-center">
 

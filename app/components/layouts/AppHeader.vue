@@ -38,8 +38,7 @@ const closeMenu = () => {
       <div class="header-content">
 
         <NuxtLink to="/" class="logo">
-          <!-- <NuxtImg src="/images/logo-bg.png" alt="Consultores JME" /> -->
-           <img :src="logoImg" alt="Consultores JME" class="logo" />
+          <NuxtImg src="/images/logo-bg.png" alt="Consultores JME" />
         </NuxtLink>
 
         <!-- Desktop -->
