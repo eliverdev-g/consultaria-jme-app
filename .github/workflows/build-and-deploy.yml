@@ -47,6 +47,11 @@ jobs:
       - name: Generate Nuxt
         run: pnpm exec nuxt build --preset github_pages
 
+      - name: Inspect generated files
+        run: |
+          echo "=== OUTPUT ==="
+          find .output/public -maxdepth 3 -type f | sort
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
