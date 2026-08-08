@@ -16,6 +16,9 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 15
 }
 
+const config = useRuntimeConfig()
+
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -39,9 +42,9 @@ const closeMenu = () => {
       <div class="header-content">
 
 <img
-  src="/consultaria-jme-app/images/logo-bg.png"
-  alt="Consultores JME"
-/>
+    :src="`${config.app.baseURL}images/logo-bg.png`"
+    alt="Consultores JME"
+  >
 
         <!-- Desktop -->
 
