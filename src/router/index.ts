@@ -1,3 +1,4 @@
+import ServiciosSectionComponent from '@/components/ServiciosSectionComponent.vue'
 import HomeView from '@/view/HomeView.vue'
 import NosotrosView from '@/view/NosotrosView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/nosotros',
       name: 'nosotros',
       component: NosotrosView,
+    },
+    {
+      path: '/servicios',
+      name: 'servicios',
+      component: ServiciosSectionComponent,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
