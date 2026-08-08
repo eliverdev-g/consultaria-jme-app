@@ -4,7 +4,6 @@ const sections = [
     id: 'mision',
     title: 'Misión',
     text: 'Simplificar y optimizar los procesos operativos y estratégicos de nuestros clientes mediante soluciones integrales que impulsen su eficiencia, fortalezcan su gestión y les permitan enfocarse en el crecimiento sostenible de su negocio.',
-    // Ruta directa a public/images/
     image: '/images/mision.jpg'
   },
   {
