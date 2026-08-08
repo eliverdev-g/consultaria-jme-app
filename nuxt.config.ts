@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@nuxt/image',
+    //'@nuxt/image',
     '@nuxt/icon',
     '@vueuse/nuxt'
   ],
