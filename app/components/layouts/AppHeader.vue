@@ -42,10 +42,7 @@ const closeMenu = () => {
           to="/"
           class="logo"
         >
-          <NuxtImg
-            src="/images/logo-bg.png"
-            alt="Consultores JME"
-          />
+          <img :src="withBase('/images/logo-bg.png')" alt="Consultores JME" />
         </NuxtLink>
 
         <!-- Desktop -->
