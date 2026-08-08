@@ -8,6 +8,7 @@ import MissionVisionSection from '~/components/home/MissionVisionSection.vue'
   <AppHeader />
 
   <main>
+    <!-- Hero Section -->
     <HeroSection />
     <MissionVisionSection />
   </main>
