@@ -35,7 +35,7 @@ jobs:
       - name: Generate Nuxt
         run: pnpm exec nuxt generate
 
-      # Este paso evita que GitHub Pages ignore la carpeta _nuxt
+      # Permite que GitHub Pages sirva archivos y carpetas que empiezan con guión bajo (_nuxt)
       - name: Prevent Jekyll from ignoring _nuxt folder
         run: touch .output/public/.nojekyll
 
