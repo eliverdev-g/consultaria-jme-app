@@ -37,11 +37,11 @@ const closeMenu = () => {
 
 // Métodos para detectar el deslizamiento táctil
 const onTouchStart = (e: TouchEvent) => {
-  touchStartX.value = e.changedTouches[0].screenX
+  touchStartX.value = e.changedTouches[0]!.screenX
 }
 
 const onTouchEnd = (e: TouchEvent) => {
-  touchEndX.value = e.changedTouches[0].screenX
+  touchEndX.value = e.changedTouches[0]!.screenX
   handleSwipe()
 }
 
