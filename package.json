@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.16.0",
+    "@tailwindcss/vite": "^4.3.3",
     "eslint": "^10.8.0",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.9"

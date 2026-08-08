@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   app: {
     baseURL: '/consultaria-jme-app/'
@@ -15,22 +17,9 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css'
+  ],
 
-  routeRules: {
-    '/': {
-      prerender: true
-    }
-  },
-
-  compatibilityDate: '2026-06-30',
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  }
+  compatibilityDate: '2026-06-30'
 })

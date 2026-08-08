@@ -8,17 +8,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -38,22 +32,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Generate Nuxt
         run: pnpm exec nuxt generate
+
+      - name: Prepare GitHub Pages assets
+        run: |
+          mkdir -p .output/public/_nuxt
+          cp -R node_modules/.cache/nuxt/.nuxt/dist/client/_nuxt/. .output/public/_nuxt/
+          cp -R public/. .output/public/
 
       - name: Inspect generated files
         run: |
           echo "=== OUTPUT ==="
-          find .output/public -maxdepth 3 -type f | sort
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: .output/public
+          find .output/public -type f | sort
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .output/public
