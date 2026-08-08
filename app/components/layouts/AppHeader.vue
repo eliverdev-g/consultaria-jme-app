@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-import logoImg from '~/assets/images/logo-bg.png'
-
 const isScrolled = ref(false)
 const mobileMenu = ref(false)
 
