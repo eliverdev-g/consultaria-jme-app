@@ -3,7 +3,14 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/consultaria-jme-app/'
+    baseURL: '/consultaria-jme-app/',
+    // Cambia la carpeta del build de '_nuxt' a 'assets' para que GitHub Pages no la bloquee
+    buildAssetsDir: 'assets'
+  },
+
+  // Preset nativo de Nitro para GitHub Pages
+  nitro: {
+    preset: 'github-pages'
   },
 
   modules: [
@@ -14,14 +21,12 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
 
-  // 1. Registra el plugin de Tailwind CSS v4 para que procese el CSS en el build
   vite: {
     plugins: [
       tailwindcss()
     ]
   },
 
-  // 2. Configura Nuxt Image para servidores estáticos (GitHub Pages)
   image: {
     provider: 'none'
   },
