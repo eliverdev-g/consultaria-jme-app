@@ -35,16 +35,9 @@ jobs:
       - name: Generate Nuxt
         run: pnpm exec nuxt generate
 
-      - name: Prepare GitHub Pages assets
-        run: |
-          mkdir -p .output/public/_nuxt
-          cp -R node_modules/.cache/nuxt/.nuxt/dist/client/_nuxt/. .output/public/_nuxt/
-          cp -R public/. .output/public/
-
-      - name: Inspect generated files
-        run: |
-          echo "=== OUTPUT ==="
-          find .output/public -type f | sort
+      # Este paso evita que GitHub Pages ignore la carpeta _nuxt
+      - name: Prevent Jekyll from ignoring _nuxt folder
+        run: touch .output/public/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

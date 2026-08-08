@@ -16,9 +16,6 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 15
 }
 
-const config = useRuntimeConfig()
-
-
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -33,29 +30,20 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <header
-    class="app-header"
-    :class="{ scrolled: isScrolled }"
-  >
+  <header class="app-header" :class="{ scrolled: isScrolled }">
     <div class="container-custom">
 
       <div class="header-content">
 
-<img class="logo"
-    :src="`${config.app.baseURL}images/logo-bg.png`"
-    alt="Consultores JME"
-  >
+        <NuxtLink to="/" class="logo">
+          <NuxtImg src="/images/logo-bg.png" alt="Consultores JME" />
+        </NuxtLink>
 
         <!-- Desktop -->
 
         <nav class="desktop-menu">
 
-          <NuxtLink
-            v-for="item in navigation"
-            :key="item.to"
-            :to="item.to"
-            class="nav-link"
-          >
+          <NuxtLink v-for="item in navigation" :key="item.to" :to="item.to" class="nav-link">
             {{ item.label }}
           </NuxtLink>
 
@@ -63,13 +51,8 @@ const closeMenu = () => {
 
         <!-- Botón móvil -->
 
-        <button
-          class="mobile-button"
-          @click="mobileMenu = !mobileMenu"
-        >
-          <UIcon
-            :name="mobileMenu ? 'i-lucide-x' : 'i-lucide-menu'"
-          />
+        <button class="mobile-button" @click="mobileMenu = !mobileMenu">
+          <UIcon :name="mobileMenu ? 'i-lucide-x' : 'i-lucide-menu'" />
         </button>
 
       </div>
@@ -80,11 +63,7 @@ const closeMenu = () => {
 
     <Transition name="fade">
 
-      <div
-        v-if="mobileMenu"
-        class="mobile-overlay"
-        @click="closeMenu"
-      />
+      <div v-if="mobileMenu" class="mobile-overlay" @click="closeMenu" />
 
     </Transition>
 
@@ -92,18 +71,9 @@ const closeMenu = () => {
 
     <Transition name="slide-menu">
 
-      <nav
-        v-if="mobileMenu"
-        class="mobile-menu"
-      >
+      <nav v-if="mobileMenu" class="mobile-menu">
 
-        <NuxtLink
-          v-for="item in navigation"
-          :key="item.to"
-          :to="item.to"
-          class="mobile-link"
-          @click="closeMenu"
-        >
+        <NuxtLink v-for="item in navigation" :key="item.to" :to="item.to" class="mobile-link" @click="closeMenu">
           {{ item.label }}
         </NuxtLink>
 
